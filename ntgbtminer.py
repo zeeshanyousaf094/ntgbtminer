@@ -52,7 +52,7 @@ def rpc(method, params=None):
 ################################################################################
 
 def rpc_getblocktemplate():
-    try: return rpc("getblocktemplate", [{}])
+    try: return rpc("getblocktemplate", [{"rules": ["segwit"]}])
     except ValueError: return {}
 
 def rpc_submitblock(block_submission):
